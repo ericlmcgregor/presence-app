@@ -13,6 +13,7 @@ Imports:
     golem,
     shiny,
     shinydashboard,
+    shinyjs,
     leaflet,
     leaflet.extras,
     sf,

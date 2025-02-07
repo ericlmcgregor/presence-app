@@ -10,8 +10,6 @@ mod_presence_ui <- function(id) {
 
 
 
-
-
 mod_presence_server <- function(id, con, species_data, polygon) {
   moduleServer(id, function(input, output, session) {
 
@@ -33,22 +31,6 @@ mod_presence_server <- function(id, con, species_data, polygon) {
 
       poly_wkt <- sf::st_as_text(polygon())
 
-  #     query <- sprintf("
-  #   WITH filtered_plots AS (
-  #     SELECT final_cn FROM plot_locations
-  #     WHERE ST_Intersects(geometry, ST_GeomFromText('%s', 4326))
-  #   )
-  #   SELECT ST_AsText(p.geometry) AS geometry,
-  #          CASE
-  #            WHEN t.common_name IS NOT NULL THEN 'Present'
-  #            ELSE 'Absent'
-  #          END AS status
-  #   FROM plot_locations p
-  #   LEFT JOIN tree_records t
-  #     ON p.final_cn = t.final_cn
-  #     AND t.common_name = '%s'
-  #   WHERE p.final_cn IN (SELECT final_cn FROM filtered_plots)
-  # ", poly_wkt, input$species_select)
         query <- sprintf("
       WITH filtered_plots AS (
         SELECT final_cn FROM plot_locations
