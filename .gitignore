@@ -1,0 +1,24 @@
+# R-specific
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+*.Rproj
+
+# Database files
+*.sqlite
+*.db
+
+# Environment/config files
+.env
+.Renviron
+
+# Temporary files
+*.log
+.tmp
+.cache/
+
+
+# Backup files
+*~
+*.bak
