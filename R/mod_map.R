@@ -1,7 +1,14 @@
 # mod_map.R
+library(shiny)
+library(shinydashboard)
+library(shinyjs)
 library(leaflet)
 library(leaflet.extras)
-library(shinyjs)  # Add this for loading states
+library(sf)
+library(dplyr)
+library(RSQLite)
+library(DBI)
+library(DT)
 
 mod_map_ui <- function(id) {
   ns <- NS(id)
@@ -97,7 +104,7 @@ mod_map_server <- function(id, con) {
       )) %>%
         addProviderTiles("CartoDB.Positron", group = "Basemap") %>%
         addProviderTiles("Esri.WorldImagery", group = "Imagery") %>%
-        setView(lng = -98.5795, lat = 39.8283, zoom = 4) %>%
+        setView(lng = -120.7973, lat = 43.6623, zoom = 7) %>%
         addDrawToolbar(
           targetGroup = "Area of Interest",
           circleOptions = FALSE,

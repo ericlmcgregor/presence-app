@@ -28,6 +28,7 @@ devtools::build()
 ## Docker ----
 ## If you want to deploy via a generic Dockerfile
 golem::add_dockerfile_with_renv()
+golem::add_dockerfile_with_renv(path = "DESCRIPTION", output = "Dockerfile", pkg = "C:/Users/ericm/Documents/presence")
 ## If you want to deploy to ShinyProxy
 golem::add_dockerfile_with_renv_shinyproxy()
 
